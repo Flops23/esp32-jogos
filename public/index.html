@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESP32 Jogos — Dominó</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <div>
+        <span class="eyebrow">ESP32 JOGOS</span>
+        <h1>Dominó</h1>
+      </div>
+      <span id="status" class="status">Modo local</span>
+    </header>
+
+    <section class="panel setup">
+      <h2>Nova partida</h2>
+      <label for="playerName">Seu nome</label>
+      <input id="playerName" maxlength="16" placeholder="Digite seu nome" autocomplete="off">
+      <button id="startButton">Criar partida local</button>
+    </section>
+
+    <section id="game" class="panel game hidden">
+      <div class="game-info">
+        <span>Jogador: <strong id="playerLabel">—</strong></span>
+        <span>Turno: <strong id="turnLabel">—</strong></span>
+      </div>
+
+      <div id="board" class="board" aria-label="Mesa de dominó"></div>
+
+      <div class="message" id="message">Suas peças aparecerão abaixo.</div>
+
+      <div>
+        <h2>Suas peças</h2>
+        <div id="hand" class="hand"></div>
+      </div>
+
+      <button id="resetButton" class="secondary">Nova partida</button>
+    </section>
+  </main>
+
+  <script src="js/protocol.js"></script>
+  <script src="js/domino.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
